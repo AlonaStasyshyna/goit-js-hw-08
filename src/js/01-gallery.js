@@ -26,10 +26,7 @@ function createGalleryItems(items) {
     .join('');
 }
 
-const lightbox = require('simplelightbox');
-console.log(lightbox);
-
-//     ('.gallery a', {
-//   captionsData: 'alt',
-//   captionDelay: 250,
-// });
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
