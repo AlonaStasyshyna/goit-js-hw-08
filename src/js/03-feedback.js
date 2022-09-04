@@ -4,3 +4,5 @@ const messageTextarea = document.querySelector('textarea[name="message"]');
 // const ENTEREDDATA_KEY = 'feedback-form-state';
 
 messageTextarea.addEventListener('input', () => {});
+
+localStorage.setItem('message', 'ghbdt');
