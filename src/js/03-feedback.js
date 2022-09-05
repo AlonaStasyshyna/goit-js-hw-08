@@ -5,22 +5,19 @@ const emailInput = document.querySelector('input[name="email"]');
 const messageTextarea = document.querySelector('textarea[name="message"]');
 
 const ENTEREDDATA_KEY = 'feedback-form-state';
-const enteredData = {};
+const enteredData = {
+  email: '',
+  message: '',
+};
 
 updatePage();
 
 feedbackForm.addEventListener('input', throttle(onInput, 500));
 feedbackForm.addEventListener('submit', onFormSubmit);
 
-function onInput(event) {
-  const value = event.target.value;
-
-  if (event.target === emailInput) {
-    enteredData.email = value;
-  }
-  if (event.target === messageTextarea) {
-    enteredData.message = value;
-  }
+function onInput() {
+  enteredData.email = emailInput.value;
+  enteredData.message = messageTextarea.value;
 
   localStorage.setItem(ENTEREDDATA_KEY, JSON.stringify(enteredData));
 }
