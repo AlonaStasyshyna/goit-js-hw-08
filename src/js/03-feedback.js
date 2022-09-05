@@ -25,12 +25,16 @@ function onInput() {
 function onFormSubmit(event) {
   event.preventDefault();
 
-  console.log(enteredData);
+  if (enteredData.email && enteredData.message) {
+    console.log(enteredData);
 
-  event.currentTarget.reset();
-  localStorage.removeItem(ENTEREDDATA_KEY);
-  enteredData.email = '';
-  enteredData.message = '';
+    event.currentTarget.reset();
+    localStorage.removeItem(ENTEREDDATA_KEY);
+    enteredData.email = '';
+    enteredData.message = '';
+  } else {
+    console.log('Fill in all fields of the form');
+  }
 }
 
 function updatePage() {
